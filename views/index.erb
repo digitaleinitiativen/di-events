@@ -1,0 +1,32 @@
+<html>
+    <head>
+    <link href="/style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="/app.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+        <script>
+     
+        </script>
+    </head>
+    <body>
+    <h1>Mutterschiff Veranstaltungen</h1>
+    <div id="app">
+        <div class="day" v-for="array,day in days">
+            <h2>{{ day }}</h2>
+            <ul>
+                <li v-for="event in array">
+                    <div class="event">
+                        <div class="event-time">
+                            {{event.local_time}} {{ event.name }}
+                        </div>
+                        <div class="event-detail">
+                           <div v-html="event.description"></div>                        
+                        </div>
+                    </div>                    
+                </li>
+            </ul>
+        </div>
+    </div>
+       
+    </body>
+</html>
